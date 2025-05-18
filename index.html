@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>RECEITAS BRASIL</H1>
+    <P>Bem-vindo ao nosso cantinho de sabores! Aqui você encontra uma variedade de receitas deliciosas, fáceis de preparar e perfeitas para qualquer ocasião. Seja você um cozinheiro iniciante ou um expert na cozinha, nosso site oferece dicas, truques e inspirações para transformar seus ingredientes em pratos incríveis. Explore nossas categorias, descubra novos sabores e deixe sua criatividade culinária brilhar. Bom apetite!</P>
+    
+    <img src="https://depositphotos.com/br/vector/emoticon-winking-showing-thumb-207959530.html" alt="Receitas de Comidas" width="800" height="300">
+<button widht="100" height="300" onclick="mudarcor()">SURPRESA</button>
+    <p>Receitas:</p>
+    <ul>
+        <li><a href="https://www.tudogostoso.com.br/categorias/1037-doces-e-sobremesas">Receitas doces</a></li>
+        <li><a href="https://www.tudogostoso.com.br/noticias/cardapios/receitas-salgadas">Receitas salgadas</a></li>
+    </ul>
+</body>
+<script>
+    let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','black','white'];
+ document.body.style.backgroundColor = listacores[0];
+ function mudarcor() {
+    let cor = listacores[Math.floor(listacores.length*Math.random())];
+    document.body.style.backgroundColor = cor; }
+    setInterval(mudarcor, 2000);
+</SCRIPt>
+</html>
