@@ -3,26 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>receitasBrasil</title>
 </head>
 <body>
-    <H1>RECEITAS BRASIL</H1>
-    <P>Bem-vindo ao nosso cantinho de sabores! Aqui você encontra uma variedade de receitas deliciosas, fáceis de preparar e perfeitas para qualquer ocasião. Seja você um cozinheiro iniciante ou um expert na cozinha, nosso site oferece dicas, truques e inspirações para transformar seus ingredientes em pratos incríveis. Explore nossas categorias, descubra novos sabores e deixe sua criatividade culinária brilhar. Bom apetite!</P>
+
+    <div styleCP,P ="text-align: center;">
+        <h1 style="MARGIN-TOP: 80PX;"> RECEITAS BRASIL</h1>
+    </div>
+   
+    <p>Bem-vindo ao nosso cantinho de sabores! Aqui você encontra uma variedade de receitas deliciosas, fáceis de preparar e perfeitas para qualquer ocasião. Seja você um cozinheiro iniciante ou um expert na cozinha, nosso site oferece dicas, truques e inspirações para transformar seus ingredientes em pratos incríveis. Explore nossas categorias, descubra novos sabores e deixe sua criatividade culinária brilhar. Bom apetite!</p>
     
-    <img src="https://depositphotos.com/br/vector/emoticon-winking-showing-thumb-207959530.html" alt="Receitas de Comidas" width="800" height="300">
-<button widht="100" height="300" onclick="mudarcor()">SURPRESA</button>
-    <p>Receitas:</p>
+    <div style="text-align: center;">
+        <img src="https://nutritotal.com.br/pro/wp-content/uploads/2019/02/receitas_novosite.png.webp" alt="Receitas de Comidas" width="1000" height="300">
+        <br>
+        <button style="width: 800px; height: 100px; margin-top: 20px;" onclick="mudarcor()">SURPRESA</button>
+    
+    
+    </div>
+    <h1>Receitas prontas:</h1>
+    <div style="text-align: left;">
     <ul>
         <li><a href="https://www.tudogostoso.com.br/categorias/1037-doces-e-sobremesas">Receitas doces</a></li>
         <li><a href="https://www.tudogostoso.com.br/noticias/cardapios/receitas-salgadas">Receitas salgadas</a></li>
     </ul>
+    </div>
+
+    <div style="margin: 40px;">
+    <h2>Cadastre sua receita</h2>
+    <form id="form-receita">
+        <input type="text" id="nome-receita" placeholder="Nome da receita" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <ul id="lista-receitas"></ul>
+</div>
 </body>
 <script>
-    let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','black','white'];
- document.body.style.backgroundColor = listacores[0];
- function mudarcor() {
-    let cor = listacores[Math.floor(listacores.length*Math.random())];
-    document.body.style.backgroundColor = cor; }
-    setInterval(mudarcor, 2000);
-</SCRIPt>
+    let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','white'];
+    document.body.style.backgroundColor = listacores[0];
+    function mudarcor() {
+        let cor = listacores[Math.floor(listacores.length*Math.random())];
+        document.body.style.backgroundColor = cor;
+    }
+   const form = document.getElementById('form-receita');
+    const lista = document.getElementById('lista-receitas');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nome = document.getElementById('nome-receita').value;
+        if (nome.trim() !== "") {
+            const li = document.createElement('li');
+            li.textContent = nome;
+            lista.appendChild(li);
+            form.reset();
+        }
+    }); 
+</script>
 </html>
