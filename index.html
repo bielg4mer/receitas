@@ -1,61 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>receitasBrasil</title>
+    <style>
+        body {
+            background: #f8f8f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        .imagem-receita {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 24px auto 16px auto;
+            display: block;
+        }
+        .surpresa-btn {
+            width: 80%;
+            max-width: 400px;
+            height: 60px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            border-radius: 8px;
+            border: none;
+            background: #ff9800;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.5s;
+        }
+        .surpresa-btn:hover {
+            background: #e68900;
+        }
+        .form-receita {
+            margin: 32px 0 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .form-receita input {
+            width: 80%;
+            max-width: 350px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        .form-receita button {
+            width: 80%;
+            max-width: 200px;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background: #4caf50;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .form-receita button:hover {
+            background: #388e3c;
+        }
+        .lista-receitas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 16px;
+        }
+        .card-receita {
+            background: #ffe0b2;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            padding: 18px 24px;
+            min-width: 160px;
+            max-width: 220px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            word-break: break-word;
+        }
+        .links-prontos {
+            margin: 32px 0 16px 0;
+            text-align: center;
+        }
+        .links-prontos ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+        .links-prontos li {
+            margin-bottom: 8px;
+        }
+        .links-prontos a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        .links-prontos a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>RECEITAS BRASIL</h1>
+        <p>Bem-vindo ao nosso cantinho de sabores! Aqui você encontra uma variedade de receitas deliciosas, fáceis de preparar e perfeitas para qualquer ocasião. Seja você um cozinheiro iniciante ou um expert na cozinha, nosso site oferece dicas, truques e inspirações para transformar seus ingredientes em pratos incríveis. Explore nossas categorias, descubra novos sabores e deixe sua criatividade culinária brilhar. Bom apetite!</p>
+        <img class="imagem-receita" src="https://nutritotal.com.br/pro/wp-content/uploads/2019/02/receitas_novosite.png.webp" alt="Receitas de Comidas">
+        <button class="surpresa-btn" onclick="mudarcor()">SURPRESA</button>
 
-    <div styleCP,P ="text-align: center;">
-        <h1 style="MARGIN-TOP: 80PX;"> RECEITAS BRASIL</h1>
+        <div class="links-prontos">
+    <h2>Receitas prontas:</h2>
+    <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 16px;">
+        <div style="background: #ff9800; color: #fff; border-radius: 10px; padding: 16px 24px; min-width: 140px; text-align: center; font-weight: bold;">
+            <a href="https://www.tudogostoso.com.br/categorias/1037-doces-e-sobremesas" target="_blank" style="color: #fff; text-decoration: none;">Receitas doces</a>
+        </div>
+        <div style="background: #ff9800; color: #fff; border-radius: 10px; padding: 16px 24px; min-width: 140px; text-align: center; font-weight: bold;">
+            <a href="https://www.tudogostoso.com.br/noticias/cardapios/receitas-salgadas" target="_blank" style="color: #fff; text-decoration: none;">Receitas salgadas</a>
+        </div>
     </div>
-   
-    <p>Bem-vindo ao nosso cantinho de sabores! Aqui você encontra uma variedade de receitas deliciosas, fáceis de preparar e perfeitas para qualquer ocasião. Seja você um cozinheiro iniciante ou um expert na cozinha, nosso site oferece dicas, truques e inspirações para transformar seus ingredientes em pratos incríveis. Explore nossas categorias, descubra novos sabores e deixe sua criatividade culinária brilhar. Bom apetite!</p>
-    
-    <div style="text-align: center;">
-        <img src="https://nutritotal.com.br/pro/wp-content/uploads/2019/02/receitas_novosite.png.webp" alt="Receitas de Comidas" width="1000" height="300">
-        <br>
-        <button style="width: 800px; height: 100px; margin-top: 20px;" onclick="mudarcor()">SURPRESA</button>
-    
-    
-    </div>
-    <h1>Receitas prontas:</h1>
-    <div style="text-align: left;">
-    <ul>
-        <li><a href="https://www.tudogostoso.com.br/categorias/1037-doces-e-sobremesas">Receitas doces</a></li>
-        <li><a href="https://www.tudogostoso.com.br/noticias/cardapios/receitas-salgadas">Receitas salgadas</a></li>
-    </ul>
-    </div>
-
-    <div style="margin: 40px;">
-    <h2>Cadastre sua receita</h2>
-    <form id="form-receita">
-        <input type="text" id="nome-receita" placeholder="Nome da receita" required>
-        <button type="submit">Cadastrar</button>
-    </form>
-    <ul id="lista-receitas"></ul>
 </div>
-</body>
-<script>
-    let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','white'];
-    document.body.style.backgroundColor = listacores[0];
-    function mudarcor() {
-        let cor = listacores[Math.floor(listacores.length*Math.random())];
-        document.body.style.backgroundColor = cor;
-    }
-   const form = document.getElementById('form-receita');
-    const lista = document.getElementById('lista-receitas');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const nome = document.getElementById('nome-receita').value;
-        if (nome.trim() !== "") {
-            const li = document.createElement('li');
-            li.textContent = nome;
-            lista.appendChild(li);
-            form.reset();
+        <h2>Cadastre sua receita</h2>
+        <form id="form-receita" class="form-receita">
+            <input type="text" id="nome-receita" placeholder="Nome da receita" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div id="lista-receitas" class="lista-receitas"></div>
+    </div>
+    <script>
+        let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','white'];
+        document.body.style.backgroundColor = listacores[0];
+        function mudarcor() {
+            let cor = listacores[Math.floor(listacores.length*Math.random())];
+            document.body.style.backgroundColor = cor;
         }
-    }); 
-</script>
+
+        const form = document.getElementById('form-receita');
+        const lista = document.getElementById('lista-receitas');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome-receita').value;
+            if (nome.trim() !== "") {
+                const card = document.createElement('div');
+                card.className = 'card-receita';
+                card.textContent = nome;
+                lista.appendChild(card);
+                form.reset();
+            }
+        });
+    </script>
+</body>
 </html>
