@@ -144,28 +144,69 @@
         </form>
         <div id="lista-receitas" class="lista-receitas"></div>
     </div>
-    <script>
-        let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','white'];
-        document.body.style.backgroundColor = listacores[0];
-        function mudarcor() {
-            let cor = listacores[Math.floor(listacores.length*Math.random())];
-            document.body.style.backgroundColor = cor;
-        }
+   <script>
+    let listacores = ['lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow','lightaquamarine','blue','red','green','yellow','pink','purple','orange','white'];
+    document.body.style.backgroundColor = listacores[0];
+    function mudarcor() {
+        let cor = listacores[Math.floor(listacores.length*Math.random())];
+        document.body.style.backgroundColor = cor;
+    }
 
-        const form = document.getElementById('form-receita');
-        const lista = document.getElementById('lista-receitas');
+    const form = document.getElementById('form-receita');
+    const lista = document.getElementById('lista-receitas');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const nome = document.getElementById('nome-receita').value;
-            if (nome.trim() !== "") {
-                const card = document.createElement('div');
-                card.className = 'card-receita';
-                card.textContent = nome;
-                lista.appendChild(card);
-                form.reset();
-            }
+    // Função para mostrar as receitas salvas
+    function mostrarReceitas() {
+        lista.innerHTML = "";
+        const receitas = JSON.parse(localStorage.getItem('receitas') || "[]");
+        receitas.forEach(function(nome, index) {
+            const card = document.createElement('div');
+            card.className = 'card-receita';
+            card.textContent = nome;
+
+            // Botão de remover
+            const btnRemover = document.createElement('button');
+            btnRemover.textContent = 'X';
+            btnRemover.title = 'Remover receita';
+            btnRemover.style.marginLeft = '12px';
+            btnRemover.style.background = '#ff5252';
+            btnRemover.style.color = '#fff';
+            btnRemover.style.border = 'none';
+            btnRemover.style.borderRadius = '50%';
+            btnRemover.style.width = '28px';
+            btnRemover.style.height = '28px';
+            btnRemover.style.cursor = 'pointer';
+            btnRemover.style.float = 'right';
+            btnRemover.onclick = function() {
+                removerReceita(index);
+            };
+
+            card.appendChild(btnRemover);
+            lista.appendChild(card);
         });
-    </script>
+    }
+
+    function removerReceita(index) {
+        const receitas = JSON.parse(localStorage.getItem('receitas') || "[]");
+        receitas.splice(index, 1);
+        localStorage.setItem('receitas', JSON.stringify(receitas));
+        mostrarReceitas();
+    }
+
+    // Mostrar receitas ao carregar a página
+    mostrarReceitas();
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nome = document.getElementById('nome-receita').value;
+        if (nome.trim() !== "") {
+            const receitas = JSON.parse(localStorage.getItem('receitas') || "[]");
+            receitas.push(nome);
+            localStorage.setItem('receitas', JSON.stringify(receitas));
+            mostrarReceitas();
+            form.reset();
+        }
+    });
+</script>
 </body>
 </html>
